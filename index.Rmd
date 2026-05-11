@@ -7,7 +7,9 @@ editor_options:
 author: "Arya Biss"
 ---
 
-![](mansueto_logo.png){width="5in"}
+```{r, echo=FALSE, fig.align='center', out.width='50%'}
+knitr::include_graphics("mansueto_logo.png")
+```
 
 
 # Overview
@@ -23,18 +25,19 @@ properties in those taxing bodies.
 Below is shown a ward map, with each ward shaded by the percentage of
 the total tax burden paid by residential taxpayers in it.
 
-![](property_tax_ward_map.png)
+```{r, echo=FALSE, fig.align='center', out.width='80%'}
+knitr::include_graphics("property_tax_ward_map.png")
+```
+
 
 ## Select Your Ward
 
-Select your ward below, report will open in a new tab.
-
 ```{r, echo=FALSE, results='asis'}
-options_html <- paste0('<option value="', 1:50, '.html">Ward ', 1:50, '</option>', collapse = "\n")
+options_html <- paste0('<option value="reports/Ward_', 1:50, '_Report.pdf">Ward ', 1:50, '</option>', collapse = "\n")
 
 cat(paste0('
-<select id="redirect-menu" onchange="openInNewTab(this.value)">
-  <option value="" selected disabled>Choose a ward...</option>',
+<select id="redirect-menu" style="font-size: 20px; padding: 5px;" onchange="openInNewTab(this.value)">
+  <option value="" selected disabled>Select your ward!</option>',
   options_html,
   '
 </select>
@@ -43,7 +46,6 @@ cat(paste0('
 function openInNewTab(url) {
   if (url) {
     window.open(url, "_blank");
-    // Optional: Reset the dropdown to the placeholder after selection
     document.getElementById("redirect-menu").selectedIndex = 0;
   }
 }
