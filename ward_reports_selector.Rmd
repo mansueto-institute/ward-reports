@@ -1,0 +1,53 @@
+---
+title: "Chicago Ward Property Tax Reports"
+output: html_document
+editor_options: 
+  markdown: 
+    wrap: 72
+author: "Arya Biss"
+---
+
+![](mansueto_logo.png){width="5in"}
+
+
+# Overview
+
+In Cook County and the City of Chicago, all properties pay taxes to
+support various governments. Municipal taxing bodies from the City of
+Chicago to the Chicago Public Schools (CPS) to Cook County Government
+all levy property taxes that are mechanistically comparable. The tax
+bill of a property is based on its assessed value, the levies of the
+taxing bodies it pays into, and the assessed values of the other
+properties in those taxing bodies.
+
+Below is shown a ward map, with each ward shaded by the percentage of
+the total tax burden paid by residential taxpayers in it.
+
+![](property_tax_ward_map.png)
+
+## Select Your Ward
+
+Select your ward below, report will open in a new tab.
+
+```{r, echo=FALSE, results='asis'}
+options_html <- paste0('<option value="', 1:50, '.html">Ward ', 1:50, '</option>', collapse = "\n")
+
+cat(paste0('
+<select id="redirect-menu" onchange="openInNewTab(this.value)">
+  <option value="" selected disabled>Choose a ward...</option>',
+  options_html,
+  '
+</select>
+
+<script>
+function openInNewTab(url) {
+  if (url) {
+    window.open(url, "_blank");
+    // Optional: Reset the dropdown to the placeholder after selection
+    document.getElementById("redirect-menu").selectedIndex = 0;
+  }
+}
+</script>
+'))
+```
+
