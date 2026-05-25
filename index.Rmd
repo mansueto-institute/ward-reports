@@ -4,7 +4,6 @@ output: html_document
 editor_options: 
   markdown: 
     wrap: 72
-author: "Arya Biss"
 ---
 
 ```{r, echo=FALSE, fig.align='center', out.width='50%'}
