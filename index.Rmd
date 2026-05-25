@@ -32,7 +32,7 @@ knitr::include_graphics("property_tax_ward_map.png")
 ## Select Your Ward
 
 ```{r, echo=FALSE, results='asis'}
-options_html <- paste0('<option value="reports/Ward_', 1:50, '_Report.pdf">Ward ', 1:50, '</option>', collapse = "\n")
+options_html <- paste0('<option value="reports/_Ward_', 1:50, '_Report.pdf">Ward ', 1:50, '</option>', collapse = "\n")
 
 cat(paste0('
 <select id="redirect-menu" style="font-size: 20px; padding: 5px;" onchange="openInNewTab(this.value)">
