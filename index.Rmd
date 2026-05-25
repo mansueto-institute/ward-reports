@@ -52,3 +52,6 @@ function openInNewTab(url) {
 '))
 ```
 
+#### Contributors
+
+Created by Arya Biss
